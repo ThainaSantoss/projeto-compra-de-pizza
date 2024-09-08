@@ -1,4 +1,6 @@
+let cart = []; // array de carrinho
 let modalQt = 1;
+let modalKey = 0;
 
 const c = (e)=> document.querySelector(e); // retorna apenas o item
 const cs = (e) => document.querySelectorAll(e); // retorna o item que achou
@@ -17,6 +19,7 @@ pizzaJson.map((item, index)=>{
     e.preventDefault();
     let key = e.target.closest('.pizza-item').getAttribute('data-key');
    modalQt = 1;
+    modalKey = key;
 
     c('.pizzaBig img').src = pizzaJson[key].img;
     c('.pizzaInfo h1').innerHTML = pizzaJson[key].name;
@@ -79,3 +82,18 @@ cs('.pizzaInfo--size').forEach((size, sizeIndex) =>{
     });
 });
 
+c('.pizzaInfo--addButton').addEventListener('click', ()=>{
+    // qual tamanho? quantas foram e qual a pizza
+    let size = parseInt(c('.pizzaInfo--size.selected').getAttribute('data-key'));
+
+cart.push({
+    id:pizzaJson[modalKey].id,
+    size,
+    qt:modalQt
+});
+
+
+
+});
+
+closeModal();
