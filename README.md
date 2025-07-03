@@ -41,7 +41,7 @@ Para rodar este projeto, você só precisa de um navegador moderno.
     
     Copiar código
     
-    `git clone https://github.com/seu-usuario/pizza-order-app.git` 
+    `git clone https://github.com/ThainaSantoss/projeto-compra-de-pizza.git` 
     
 2.  Abra o arquivo `index.html` no seu navegador.
     
